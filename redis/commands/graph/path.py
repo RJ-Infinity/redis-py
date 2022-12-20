@@ -54,6 +54,9 @@ class Path:
         return self
 
     def __eq__(self, other):
+        # Check that the other is the correct type
+        if not isinstance(other, type(self)):
+            return False
         return self.nodes() == other.nodes() and self.edges() == other.edges()
 
     def __str__(self):
