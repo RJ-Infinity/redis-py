@@ -62,7 +62,7 @@ class Edge:
 
     def __eq__(self, rhs):
         # Check that the rhs the correct type
-        if type(self) != type(rhs):
+        if not isinstance(rhs, type(self)):
             return False
         
         # Quick positive check, if both IDs are set.
